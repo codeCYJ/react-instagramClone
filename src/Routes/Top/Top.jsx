@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import instagramTitle from "../../image/instagramTitle.png";
-import { FaSearch } from "react-icons/fa";
+import instaAdd from "../../image/instaAdd.png";
+import instaDM from "../../image/instaDM.png";
+import instaHome from "../../image/instaHome.png";
+import instaLike from "../../image/instaLike.png";
+import instaPoisition from "../../image/instaPosition.png";
+import instaProfile from "../../image/instaProfile.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { NavLink as Link } from "react-router-dom";
@@ -11,6 +16,7 @@ const MainBox = styled.div`
   height: 54px;
   display: flex;
   justify-content: center;
+  border-bottom: 1px solid #e0e0e0;
 `;
 
 const Main = styled.div`
@@ -19,11 +25,27 @@ const Main = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-sizing: border-box;
+`;
+const TopNav = styled.div`
+  display: flex;
+  align-items: center;
+`;
+const TopNavA = styled.div`
+  width: 266px;
+  padding: 0 0 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;
 
-const IntagramTitleImage = styled.img`
+const InstagramTitleImage = styled.img`
   height: 29px;
   width: 103px;
+`;
+const InstaImage = styled.img`
+  height: 20px;
+  width: 20px;
 `;
 const SearchBox = styled.div`
   width: 215px;
@@ -46,36 +68,38 @@ function Top() {
   // const [isOpenAddLargeMenu, setIsOpenAddLargeMenu] = useState(false);
   // const [smallMenuBackup, setSmallMenuBackup] = useState();
   const [isSearch, setIsSearch] = useState(false);
-
   return (
     <MainBox>
       <Main>
-        <IntagramTitleImage src={instagramTitle} />
+        <InstagramTitleImage src={instagramTitle} />
         <SearchBox>
           <span onClick={() => setIsSearch(true)}>
             <FontAwesomeIcon icon={faSearch} color="#ccc" />
             <SearchInput placeholder="검색" />
           </span>
         </SearchBox>
-        <div className="top_nav">
-          <div className="top_nav_A">
-            <Link to="/home"></Link>
-            <Link
-              to="/payment"
-              className="payment"
-              activeStyle={{ color: "#fade4b" }}
-            >
-              결제관리
+        <TopNav>
+          <TopNavA>
+            <Link to="/home">
+              <InstaImage src={instaHome} />
             </Link>
-            <Link
-              to="/consulting"
-              className="consulting"
-              activeStyle={{ color: "#fade4b" }}
-            >
-              상담관리
+            <Link to="/payment">
+              <InstaImage src={instaDM} />
             </Link>
-          </div>
-          {"asd" === undefined ? (
+            <Link to="/payment">
+              <InstaImage src={instaAdd} />
+            </Link>
+            <Link to="/payment">
+              <InstaImage src={instaPoisition} />
+            </Link>
+            <Link to="/payment">
+              <InstaImage src={instaLike} />
+            </Link>
+            <Link to="/payment">
+              <InstaImage src={instaProfile} />
+            </Link>
+          </TopNavA>
+          {/* {"asd" === undefined ? (
             <div className="top_nav_B logouttopmenu">
               <Link to="/" className="signin">
                 Sign In
@@ -88,8 +112,8 @@ function Top() {
               </div>
               <div className="signout">Sign Out</div>
             </div>
-          )}
-        </div>
+          )} */}
+        </TopNav>
       </Main>
     </MainBox>
   );
