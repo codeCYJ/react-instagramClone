@@ -9,11 +9,9 @@ const Profile = styled.div`
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid #e0e0e0;
 `;
 const ProfileName = styled.div`
   width: 536px;
-  height: 60px;
   display: flex;
   align-items: center;
   justify-content: space-between;

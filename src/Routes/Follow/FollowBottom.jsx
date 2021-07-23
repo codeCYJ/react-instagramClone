@@ -6,7 +6,6 @@ const BottomBox = styled.div`
   margin: 15px 0 0 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 `;
 const MenuList = styled.p`
   margin: 0 0 3px 0;
